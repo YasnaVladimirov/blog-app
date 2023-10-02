@@ -1,0 +1,453 @@
+@import url("http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700");
+$lightGreen: #b9e7e7;
+
+body {
+  margin: 0;
+  padding: 0;
+
+  .app {
+    .link {
+      text-decoration: none;
+      color: inherit;
+      font-family: "Roboto Slab";
+    }
+
+    //REGISTER & LOGIN
+    .auth {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: $lightGreen;
+      font-family: "Roboto Slab";
+
+      form {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        padding: 50px;
+        min-width: 400px;
+        max-width: 400px;
+      }
+
+      input {
+        border: none;
+        border-bottom: 1px solid grey;
+        padding: 10px;
+        margin-top: 1.2rem;
+      }
+
+      p {
+        margin: 0;
+        margin-bottom: 8px;
+        white-space: pre-wrap;
+        padding: 8px;
+        color: red;
+        font-size: small;
+        -webkit-box-shadow: 1px 5px 11px -3px rgba(143, 143, 143, 1);
+        -moz-box-shadow: 1px 5px 11px -3px rgba(143, 143, 143, 1);
+        box-shadow: 1px 5px 11px -3px rgba(143, 143, 143, 1);
+      }
+
+      h1 {
+        font-size: 24px;
+        color: teal;
+        margin-bottom: 20px;
+      }
+
+      button {
+        padding: 10px;
+        border: none;
+        background-color: teal;
+        cursor: pointer;
+        color: black;
+        margin: 1.5rem 0;
+      }
+
+      .gender {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 8px;
+        color: rgb(89, 89, 89);
+        font-size: small;
+        input {
+          margin: 0;
+        }
+      }
+    }
+
+    .container {
+      margin: 0 auto;
+      width: 1024px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+
+      //NAVBAR
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 1024px;
+
+        .logo {
+          img {
+            width: 150px;
+          }
+        }
+
+        .links {
+          display: flex;
+          gap: 20px;
+          justify-content: center;
+          align-items: center;
+
+          .link {
+            text-transform: uppercase;
+          }
+        }
+
+        h6 {
+          font-size: 16px;
+          font-weight: 300;
+        }
+
+        .write {
+          background-color: $lightGreen;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 300;
+          border: 1px solid white;
+          padding: 5px;
+
+          &:hover {
+            color: teal;
+            background-color: white;
+            border: 1px solid teal;
+          }
+        }
+
+        .authSection {
+          .logout {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            .logoutIcon {
+              margin-left: 12px;
+              display: flex;
+              align-items: center;
+              color: rgb(0, 75, 75);
+              cursor: pointer;
+            }
+
+            img {
+              width: 40px;
+            }
+          }
+
+          .login {
+            color: rgb(0, 75, 75);
+            cursor: pointer;
+          }
+
+          .username {
+            font-family: "Roboto Slab";
+            text-transform: uppercase;
+            color: rgb(131, 157, 15);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+          }
+        }
+      }
+
+      //FOOTER
+      footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 1rem;
+        margin-top: 5rem;
+        padding: 20px;
+        background-color: $lightGreen;
+
+        img {
+          height: 50px;
+        }
+      }
+
+      //HOME
+      .home {
+        flex: 1;
+
+        .posts {
+          margin-top: 50px;
+          padding-left: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 150px;
+          font-family: "Open Sans";
+
+          .post {
+            display: flex;
+            gap: 100px;
+
+            &:nth-child(2n) {
+              flex-direction: row-reverse;
+            }
+
+            .img {
+              flex: 2;
+              position: relative;
+
+              &::after {
+                content: "";
+                width: 100%;
+                height: 100%;
+                background-color: $lightGreen;
+                position: absolute;
+                top: 20px;
+                left: -20px;
+                z-index: -1;
+              }
+
+              img {
+                width: 100%;
+                min-height: 250px;
+                max-height: 400px;
+                object-fit: cover;
+              }
+            }
+
+            .content {
+              flex: 3;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+
+              h1 {
+                font-size: 2.5rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 1; 
+                -webkit-box-orient: vertical;
+              }
+
+              p {
+                font-size: 1.3rem;
+                margin: 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 3; 
+                -webkit-box-orient: vertical;
+              }
+
+              button {
+                width: max-content;
+                margin-top: 10px;
+                padding: 10px 20px;
+                border: none;
+                cursor: pointer;
+                background-color: white;
+                border: 1px solid teal;
+                color: teal;
+
+                &:hover {
+                  border: 1px solid white;
+                  background-color: $lightGreen;
+                  color: black;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // POST PAGE
+      .postPage {
+        display: flex;
+        justify-content: beetwen;
+        gap: 50px;
+
+        .content {
+          flex: 4;
+          font-family: "Open Sans";
+
+          img {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+          }
+
+          .user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+            img {
+              width: 50px;
+            }
+            .edit {
+              display: flex;
+              gap: 5px;
+              img {
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+              }
+            }
+            .user-info {
+              display: flex;
+              flex-direction: column;
+              gap: 5px;
+              .post-date {
+                font-size: small;
+                color: rgb(108, 108, 108);
+              }
+            }
+          }
+
+          .info {
+            p {
+              text-align: justify;
+              line-height: 30px;
+            }
+          }
+        }
+
+        .menu {
+          flex: 2;
+          display: flex;
+          flex-direction: column;
+
+          h1 {
+            font-size: 20px;
+            color: #555;
+          }
+          .post {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+
+            img {
+              width: 100%;
+              max-height: 200px;
+              object-fit: cover;
+            }
+
+            h2 {
+              color: #555;
+            }
+
+            button {
+              width: max-content;
+              padding: 10px 20px;
+              border: none;
+              cursor: pointer;
+              background-color: white;
+              border: 1px solid teal;
+              color: teal;
+
+              &:hover {
+                border: 1px solid white;
+                background-color: $lightGreen;
+                color: black;
+              }
+            }
+          }
+        }
+      }
+
+      //WRITE
+      .add {
+        margin-top: 20px;
+        display: flex;
+        gap: 20px;
+
+        .content {
+          flex: 5;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          input {
+            padding: 10px;
+            border: 1px solid lightgray;
+          }
+
+          .editorContainer {
+            height: 300px;
+            overflow: scroll;
+            border: 1px solid lightgray;
+
+            .editor {
+              height: 100%;
+              border: none;
+            }
+          }
+        }
+
+        .menu {
+          flex: 2;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          .item {
+            border: 1px solid lightgray;
+            padding: 10px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #555;
+
+            h1 {
+              font-size: 20px;
+            }
+
+            .file {
+              text-decoration: underline;
+              cursor: pointer;
+            }
+
+            .buttons {
+              display: flex;
+              justify-content: space-between;
+
+              :first-child {
+                cursor: pointer;
+                color: teal;
+                background-color: white;
+                border: 1px solid teal;
+                padding: 3px 5px;
+              }
+              :last-child {
+                cursor: pointer;
+                color: white;
+                background-color: teal;
+                border: 1px solid teal;
+                padding: 3px 5px;
+              }
+            }
+
+            .cat {
+              display: flex;
+              align-items: center;
+              gap: 2px;
+              color: teal;
+            }
+          }
+        }
+      }
+    }
+  }
+}
